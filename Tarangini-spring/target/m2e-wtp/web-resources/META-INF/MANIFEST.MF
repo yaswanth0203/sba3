@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: Taranginiltd-SBA2
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: verizon27
+Implementation-Vendor-Id: com.verizon
+Build-Jdk: 1.8.0_144
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/Taranginiltd-SBA2
+Created-By: Maven Integration for Eclipse
+
