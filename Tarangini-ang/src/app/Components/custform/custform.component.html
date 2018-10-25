@@ -1,0 +1,136 @@
+<div class="container mt-2">
+  <div class="row">
+    <div class="col-sm-9 m-auto">
+      <h3 class="mb-5 mt-5">
+
+        <fa name="user-plus"></fa>
+        New Request
+
+      </h3>
+
+      <form class="form" #f="ngForm" novalidate (ngSubmit)="f.valid && save()">
+
+
+
+        <div class="mb-3">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                Selected Package
+              </span>
+            </div>
+            <input type="text" class="form-control" id="planId" name="planId" [(ngModel)]="customer.pkgId" readonly="readonly" />
+          </div>
+        </div>
+
+
+
+        <div class="mb-3">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                Name
+              </span>
+            </div>
+            <input type="text" class="form-control" id="enm" name="enm" required minlength="5" maxlength="15"
+              [(ngModel)]="customer.name" #enm=ngModel placeholder="Enter Name" />
+          </div>
+          <div class="alert alert-danger" *ngIf="(enm.errors && (enm.touched || enm.darty))||(enm.errors && (enm.touched || enm.darty))">
+            <p *ngIf="(enm.errors && (enm.touched || enm.darty))">Please see that Name
+              <strong>
+                <span *ngIf="enm.errors.required">is not left blank</span>
+                <span *ngIf="enm.errors.minlength">is atleast 5 chars in length</span>
+              </strong>
+            </p>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                Mobile Number
+              </span>
+            </div>
+            <input type="number" class="form-control" id="mobile" name="mobile" [(ngModel)]="customer.mobile" #mobile=ngModel
+              placeholder="Enter Mobile Number" />
+          </div>
+          <div class="alert alert-danger" *ngIf="mobile.errors && (mobile.touched || mobile.darty)">
+            <p>Please see that mobile
+              <strong>
+                <span *ngIf="mobile.errors.required">is not left blank</span>
+              </strong>
+            </p>
+          </div>
+        </div>
+
+
+        <div class="mb-3">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                Address
+              </span>
+            </div>
+            <input type="string" class="form-control" id="address" name="address" [(ngModel)]="customer.address"
+              #address=ngModel placeholder="Type in your address" />
+          </div>
+          <div class="alert alert-danger" *ngIf="address.errors && (address.touched || address.darty)">
+            <p>Please see that address
+              <strong>
+                <span *ngIf="address.errors.required">is not left blank</span>
+              </strong>
+            </p>
+          </div>
+        </div>
+
+
+        <div class="mb-3">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+
+                Time Slot
+
+              </span>
+            </div>
+            <div class="form-check-inline">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="timeslot" value="9-12" required [(ngModel)]="customer.time"
+                  #timeslot=ngModel />9AM-12PM
+              </label>
+            </div>
+            <div class="form-check-inline">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="timeslot" value="12-3" required [(ngModel)]="customer.time"
+                  #timeslot=ngModel />12PM-3PM
+              </label>
+            </div>
+            <div class="form-check-inline">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="timeslot" value="3-6" required [(ngModel)]="customer.time"
+                  #timeslot=ngModel />3PM-6PM
+              </label>
+            </div>
+            <div class="form-check-inline">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="timeslot" value="6-9" required [(ngModel)]="customer.time"
+                  #timeslot=ngModel /> 6PM-9PM
+              </label>
+            </div>
+          </div>
+          <div class="alert alert-danger" *ngIf="timeslot.invalid">
+            <p>Please see that timeslot
+              <strong>is selected</strong>
+            </p>
+          </div>
+        </div>
+        <div>
+          <p>By clicking on the Confirm button , it states that You agree all the policies and the conditions of our
+            Company</p>
+          <button class="btn btn-block btn-primary">Confirm my Application</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

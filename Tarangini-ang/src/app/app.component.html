@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-sm bg-secondary navbar-light">
+    <a class="navbar-brand" routerLink="/">
+        <img [src]="logoUrl" style="width:40px" />Tarangini limited....with lightning Speed
+    </a>
+
+
+    <form class="form-inline pull-right">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary" (click)="doChangeType('maxSpeed',srch)">
+                        <fa name="tachometer"></fa>
+                    </button>
+                    <button type="button" class="btn btn-primary" (click)="doChangeType('maxUsage',srch)">
+                        <fa name="database"></fa>
+                    </button>
+                    <button type="button" class="btn btn-primary" (click)="doChangeType('chargePerMonth',srch)">
+                        <fa name="money"></fa>
+                    </button>
+
+                </div>
+            </div>
+            <input type="text" name="srchValue" class="form-control" [(ngModel)]="srchValue" required #srch placeholder="Max Speed" />
+            <div class="input-group-prepend">
+                <button class="btn btn-primary" (click)="doSearch()">
+                    <fa name="search"></fa>
+                </button>
+            </div>
+        </div>
+    </form>
+</nav>
+
+
+<router-outlet></router-outlet>

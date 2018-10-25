@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <h2 class="mb-5 ml-5">
+    <fa name="users"></fa> Plans
+  </h2>
+
+  <!--<div class="alert alert-warning" *ngIf="!plans || plans.length==0">
+    <fa name="exclamation-triangle"></fa>Np Plkans in your Region
+  </div>-->
+
+  <div class="row" *ngIf="plans && plans.length>0">
+    <div class="col-lg-3 ml-1 mb-1" *ngFor="let p of plans">
+      <div class="card">
+        <div class="card-body">
+          <h6 class="card-title">{{p.title}}</h6>
+          <p class="card-text">
+            {{p.maxSpeed}}Mbps speed
+            <br /> {{p.maxUsage}}GB per Month
+            <br /> Rs.{{p.chargePerMonth}}(excl. of taxes)
+          </p>
+          <p id="govt">Will be taxed as per the Govt. rules</p>
+        </div>
+        <div class="card-footer" #cf>
+          <div class="btn-group">
+            <a routerLink="/addCustomer/{{p.title}}" class="btn btn-primary">
+              Apply</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
